@@ -1,7 +1,5 @@
 <template>
-<div>
-  <Nav/>
-</div>
+<Layout>sta</Layout>
 </template>
 
 <script lang="ts">
