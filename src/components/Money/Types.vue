@@ -21,7 +21,6 @@ export default class Types extends Vue {
   type = '-';//'-'表示支出，'+'表示收入
   @Prop(Number) propA: number | undefined;
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   selectType(type: string) {//type只能是-或+中的一个
     if (type !== '-' && type !== '+') {
       throw new Error('type is unknown');
