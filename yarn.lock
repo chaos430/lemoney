@@ -10112,10 +10112,10 @@ svg-sprite-loader-mod@^4.1.6-mod1:
     svg-baker-runtime "1.4.1"
     url-slug "2.0.0"
 
-svg-sprite-loader@^6.0.7:
-  version "6.0.7"
-  resolved "https://registry.nlark.com/svg-sprite-loader/download/svg-sprite-loader-6.0.7.tgz?cache=0&sync_timestamp=1622202416926&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsvg-sprite-loader%2Fdownload%2Fsvg-sprite-loader-6.0.7.tgz#a95c2c050e408ed715167617d11f8c8998eaa45b"
-  integrity sha1-qVwsBQ5AjtcVFnYX0R+MiZjqpFs=
+svg-sprite-loader@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.nlark.com/svg-sprite-loader/download/svg-sprite-loader-6.0.0.tgz?cache=0&sync_timestamp=1622202416926&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsvg-sprite-loader%2Fdownload%2Fsvg-sprite-loader-6.0.0.tgz#8fdc539f7af5f212329bbc33dd4717a2e8a7f435"
+  integrity sha1-j9xTn3r18hIym7wz3UcXouin9DU=
   dependencies:
     bluebird "^3.5.0"
     deepmerge "1.3.2"
