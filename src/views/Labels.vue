@@ -13,23 +13,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import Button from '@/components/Button.vue';
-
+import {mixins} from 'vue-class-component';
+import {TagHelper} from '@/mixins/TagHelper';
 @Component({
-  components: {Button}
-})
-export default class labels extends Vue {
-  //todo
-  //tags = store.tagList;
-
-  createTag() {
-    const name = window.prompt('请输入标签名');
-    if (name) {
-      //todo
-      //store.createTag(name)
+  components: {Button},
+  computed: {
+    tags(){
+      return this.$store.state.tagList
     }
+  }
+})
+export default class labels extends mixins(TagHelper) {
+  beforeCreate(){
+    this.$store.commit('fetchTags')
   }
 }
 </script>
