@@ -29,29 +29,23 @@ export default class EditLabel extends Vue {
   }
   created() {
     const id = this.$route.params.id
+    this.$store.commit('fetchTags')
     this.$store.commit('setCurrentTag',id)
     if (!this.tag) {
       this.$router.replace('/404');
     }
   }
 
-  update() {
+  update(name:string) {
     if (this.tag) {
-      //todo
-      //store.updateTag(this.tag.id, name);
+      this.$store.commit('updateTag',{id:this.tag.id,name})
     }
   }
 
   remove() {
     if (this.tag) {
-      //
-      return
-  //     if (store.removeTag(this.tag.id)) {
-  //       this.$router.back();
-  //     } else {
-  //       store.alert('删除失败');
-  //     }
-   }
+      this.$store.commit('removeTag',this.tag.id)
+    }
    }
 
   goBack() {
