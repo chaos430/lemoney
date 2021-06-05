@@ -13,7 +13,7 @@ Vue.component('Nav', Nav);
 Vue.component('Layout', Layout);
 Vue.component('Icon', Icon);
 
-//record store
+
 
 new Vue({
     router,
