@@ -1,14 +1,17 @@
 <template>
-  <ul class="tabs">
+  <ul class="tabs" :class="{[classPrefix+'-tabs']:classPrefix}">
     <li v-for="item in dataSource" :key="item.value"
+        class="tabs-item"
         :class="{selected: item.value === value,[classPrefix+'-tabs-item']:classPrefix}"
-        @click="select(item)">{{item.text}}</li>
+        @click="select(item)">{{ item.text }}
+    </li>
   </ul>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
+
 type DataSourceItem = { text: string, value: string[] }
 @Component
 export default class Tabs extends Vue {
@@ -17,8 +20,8 @@ export default class Tabs extends Vue {
   @Prop(String) readonly value!: string;
   @Prop(String) classPrefix?: string;
 
-  select(item:DataSourceItem){
-    this.$emit('update:value',item.value)
+  select(item: DataSourceItem) {
+    this.$emit('update:value', item.value);
   }
 
 }
@@ -32,7 +35,7 @@ export default class Tabs extends Vue {
   text-align: center;
   font-size: 24px;
 
-  > li {
+  &-item {
     width: 50%;
     height: 64px;
     display: flex;
