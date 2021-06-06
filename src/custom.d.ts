@@ -8,7 +8,7 @@ type RecordItem = {
     notes: string
     type: string
     amount: number
-    createdAt: string
+    createdAt?: string
 }
 type Tag = {
     id: string;
