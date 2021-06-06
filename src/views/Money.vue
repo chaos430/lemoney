@@ -48,7 +48,11 @@ created(){
       return window.alert('请至少选择一个标签')
     } else {
       this.$store.commit('createRecord', this.record)
-      this.record.notes = ''
+      if(this.$store.state.createRecordError === null){
+        window.alert('已保存')
+        this.record.notes = ''
+
+      }
     }
   }
 }
