@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <router-view></router-view>
 
 
@@ -22,5 +22,9 @@ body {
   content:'';
   display: block;
   clear:both;
+}
+#app{
+  max-width: 500px;
+  margin: 0 auto;
 }
 </style>
