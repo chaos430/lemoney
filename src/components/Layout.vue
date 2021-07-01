@@ -1,6 +1,6 @@
 <template>
 <div class="layout-wrapper">
-  <div class="content" :class="classPrefix && `${classPrefix}-content`">
+  <div class="content" >
     <slot/>
   </div>
   <Nav/>
@@ -9,7 +9,6 @@
 
 <script lang="ts">
 export default {
-  props: ['classPrefix'],
   name: 'Layout'
 };
 </script>

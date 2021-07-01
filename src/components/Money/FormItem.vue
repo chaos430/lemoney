@@ -2,7 +2,7 @@
 
   <div>
 
-    <label class="formItem"><span class="name">{{this.fieldName}}</span> <input type="text" :value="value" @input="onValueChanged($event.target.value)" :placeholder="placeholder">
+    <label class="notes"><span class="name">{{this.fieldName}}</span> <input type="text" v-model="$store.state.notes" :placeholder="placeholder">
     </label>
   </div>
 </template>
@@ -16,28 +16,28 @@ export default class FormItem extends Vue {
   @Prop({default: ''})  readonly value!:string;
   @Prop({required:true}) fieldName!:string
   @Prop() placeholder?: string
-  onValueChanged(value:string){
-    this.$emit('update:value',value)
-  }
+
 }
 </script>
 
 <style lang="scss" scoped>
-.formItem {
-  font-size: 14px;
+.notes{
+  background: white;
+  padding: 0 16px;
   display: flex;
-  align-items: center;
-
-  .name {
-    padding-left: 16px;
+  justify-content: space-between;
+  text-align: center;
+  align-items:center;
+  span {
+    padding-right: 16px;
   }
-
   input {
+    text-align: right;
     height: 40px;
     flex-grow: 1;
     background: transparent;
     border: none;
-    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 

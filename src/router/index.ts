@@ -5,35 +5,39 @@ import Labels from '@/views/Labels.vue';
 import Statistics from '@/views/Statistics.vue';
 import NotFound from '@/views/NotFound.vue';
 import EditLabel from '@/views/EditLabel.vue';
+import General from '@/views/General.vue';
+import EditRecord from '@/views/EditRecord.vue';
+import Chart from '@/views/Chart.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: '/',
-        redirect: '/money'
+        redirect: '/general'
     },
     {
         path: '/money',
         component: Money
     },
     {
-        path: '/labels',
-        component: Labels
+        path:'/general',
+        component: General
     },
     {
-        path: '/statistics',
-        component: Statistics
+        path: '/chart',
+        component: Chart
     },
     {
-      path: '/labels/edit/:id',
-      component: EditLabel
+        path: '/general/edit/:id',
+        component: EditRecord
     },
     {
         path: '*',
         component: NotFound
-    }
+    },
 ];
+
 
 const router = new VueRouter({
     routes

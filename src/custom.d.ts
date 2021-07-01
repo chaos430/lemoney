@@ -1,31 +1,21 @@
-type RootState = {
-    recordList: RecordItem[],
-    createRecordError: Error | null,
-    createTagError: Error | null,
-    tagList: Tag[],
-    currentTag?: Tag
+type RootState={
+    output: string;
+    selectedTag: string;
+    type: string;
+    notes: string;
+    recordList: RecordItem[];
+    budget: number|null;
+    payTags: tags;
+    incomeTags: tags;
 }
 type RecordItem = {
-    tags: Tag[]
+    tag:string
     notes: string
     type: string
     amount: number
     createdAt?: string
-}
-type Tag = {
-    id: string;
-    name: string;
-}
-type TagListModel = {
-    data: Tag[]
-    fetch: () => Tag[]
-    create: (name: string) => 'success' | 'duplicated' //联合类型
-    update: (id: string, name: string) => 'success' | 'not found' | 'duplicated'
-    remove: (id: string) => boolean
-    save: () => void
+    id: string|null;
 }
 
-interface Window {
+type tags=string[]
 
-
-}
